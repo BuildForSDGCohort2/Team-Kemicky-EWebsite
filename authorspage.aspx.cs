@@ -127,7 +127,7 @@ namespace OnlineLMS
                     }//if_con
 
                     //Firing the SQl Query
-                    SqlCommand cmd = new SqlCommand(cmdText: "UPDATE tbl_author SET author_name=@author_name WHERE author_id='" + AuthorID.Text.Trim() + "'", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE tbl_author SET author_name=@author_name WHERE author_id='" + AuthorID.Text.Trim() + "'", con);
                     SqlParameter sqlParameterName = cmd.Parameters.AddWithValue("@author_name", AuthorName.Text.Trim());
 
                     cmd.ExecuteNonQuery();
@@ -161,7 +161,7 @@ namespace OnlineLMS
                 }//if_con
 
                 //Firing the SQl Query
-                SqlCommand cmd = new SqlCommand(cmdText: "DELETE from tbl_author WHERE author_id='" + AuthorID.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("DELETE from tbl_author WHERE author_id='" + AuthorID.Text.Trim() + "'", con);
 
 
                 cmd.ExecuteNonQuery();

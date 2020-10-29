@@ -132,7 +132,7 @@ namespace OnlineLMS
                 }//if_con
 
                 //Firing the SQl Query
-                SqlCommand cmd = new SqlCommand(cmdText: "UPDATE tbl_publisher SET publisher_name=@publisher_name WHERE publisher_id='" + PublisherID.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("UPDATE tbl_publisher SET publisher_name=@publisher_name WHERE publisher_id='" + PublisherID.Text.Trim() + "'", con);
                 SqlParameter sqlParameterName = cmd.Parameters.AddWithValue("@publisher_name", PublisherName.Text.Trim());
 
                 cmd.ExecuteNonQuery();
@@ -166,7 +166,7 @@ namespace OnlineLMS
                 }//if_con
 
                 //Firing the SQl Query
-                SqlCommand cmd = new SqlCommand(cmdText: "DELETE from tbl_publisher WHERE publisher_id='" + PublisherID.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("DELETE from tbl_publisher WHERE publisher_id='" + PublisherID.Text.Trim() + "'", con);
 
 
                 cmd.ExecuteNonQuery();
